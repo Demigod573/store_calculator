@@ -33,9 +33,9 @@ class _SettingState extends State<Setting> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 165, 194, 248),
-        appBar: AppBar(
-          title: const Text("Store Calc"),
+        backgroundColor: Color.fromARGB(255, 42, 42, 43),
+        appBar: AppBar(backgroundColor: Color.fromARGB(255, 42, 41, 41),
+          title: const Text(" Set Yarn Price  📝", style: TextStyle(fontSize: 30,color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 2),),
           centerTitle: true,
         ),
         body: Padding(
@@ -57,8 +57,8 @@ class _SettingState extends State<Setting> {
                     border: const OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     label: const Text(
-                      "Soft Cone Price",
-                      style: TextStyle(fontSize: 20),
+                      "         Soft Cone Price ",
+                      style: TextStyle(fontSize: 20, color: Colors.white, letterSpacing: 2),
                     ),
                     suffix: IconButton(
                         onPressed: () {
@@ -85,8 +85,8 @@ class _SettingState extends State<Setting> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)),
                     label: const Text(
-                      "Hard Cone Price",
-                      style: TextStyle(fontSize: 20),
+                      "          Hard Cone Price",
+                      style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
                     ),
                     suffix: IconButton(
                         onPressed: () {
@@ -115,8 +115,8 @@ class _SettingState extends State<Setting> {
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(20)),
                     label: const Text(
-                      "Shine  Price",
-                      style: TextStyle(fontSize: 20),
+                      "            Shine  Price",
+                      style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
                     ),
                     suffix: IconButton(
                         onPressed: () {
@@ -127,7 +127,7 @@ class _SettingState extends State<Setting> {
                         icon: const Icon(Icons.cancel_outlined))),
               ),
               const SizedBox(
-                height: 20,
+                height: 90,
               ),
 
               ///// THE SETTING HAPPENS WHEN THISN BUTTON IS PRESSED
@@ -137,7 +137,7 @@ class _SettingState extends State<Setting> {
                     setState(() {_saveData();
 });
                   },
-                  child: const Text("Set Prices"))
+                  child: const Text(" Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
             ],
           ),
         ));

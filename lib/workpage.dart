@@ -53,11 +53,13 @@ class _WorkPageState extends State<WorkPage> {
    
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: const Color.fromARGB(255, 99, 237, 242),
-      appBar: AppBar(
-        title: const Text(" Jane's Customized Calculator"),
+      backgroundColor: Color.fromARGB(255, 74, 74, 74),
+      appBar: AppBar( 
+        title: const Text("Jane's Kentey Calculator", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,letterSpacing: 5)),
         centerTitle: true,
-        backgroundColor: Colors.blue[400],
+        backgroundColor: Color.fromARGB(255, 81, 83, 83),
+        
+        
       ),
 
 
@@ -84,7 +86,7 @@ class _WorkPageState extends State<WorkPage> {
                   icon: const Icon(Icons.settings)),
               title: const Text(
                 'Set Prices',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 16,letterSpacing: 2, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
@@ -153,11 +155,11 @@ class _WorkPageState extends State<WorkPage> {
                     Row(
                       children: [
                         Card(
-                          elevation: 8,
+                          elevation: 18,
                           child: Container(
                             width: 140,
-                            height: 90,
-                            color: const Color.fromARGB(255, 101, 223, 244),
+                            height: 100,
+                            color: Color.fromARGB(255, 102, 113, 113),
                             child: Center(
                               ///
                               /// THIS IS WHERE THE BALANCE IS SHOWN IN THE APP
@@ -169,13 +171,13 @@ class _WorkPageState extends State<WorkPage> {
                                   Center(
                                     child: Text(
                                       'GH₵' + Total.toString() + '0',
-                                      style: const TextStyle(
+                                      style: const TextStyle(color: Colors.white,
                                           fontSize: 25,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
                                   SizedBox(height: 10,),
-                                  const Text("Total Amount")
+                                  const Text("Total Amount", style: TextStyle(color: Colors.white,letterSpacing: 2, fontWeight: FontWeight.bold),)
                                 ],
                               ),
                             ),
@@ -185,11 +187,11 @@ class _WorkPageState extends State<WorkPage> {
                           width: 30,
                         ),
                         Card(
-                          elevation: 8,
+                          elevation: 16,
                           child: Container(
                             width: 140,
-                            height: 90,
-                            color: const Color.fromARGB(255, 48, 188, 212),
+                            height: 100,
+                            color: Color.fromARGB(255, 167, 205, 210),
                             child: Center(
                               ////
                               /// THIS IS WHERE THE BALANCE IS SHOWN IN THE APP
@@ -203,11 +205,11 @@ class _WorkPageState extends State<WorkPage> {
                                       'GH₵' + balance.toString() + '0',
                                       style: const TextStyle(
                                           fontSize: 25,
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.bold,),
                                     ),
                                   ),
                                   SizedBox(height: 10,),
-                                  const Text('Balance')
+                                  const Text('Balance' , style: TextStyle(letterSpacing: 2, fontWeight: FontWeight.bold),)
                                 ],
                               ),
                             ),
@@ -218,7 +220,7 @@ class _WorkPageState extends State<WorkPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 50,
                 ),
         
                 // EXPANDED
@@ -230,7 +232,7 @@ class _WorkPageState extends State<WorkPage> {
                       keyboardType: TextInputType.number,
                       controller: Syarn,
                       decoration: InputDecoration(
-                          label: const Text("Number Small Cones"),
+                          label: const Text("          Number Small Cones", style: TextStyle(color: Colors.white),),
                           contentPadding: const EdgeInsets.all(0),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -258,7 +260,7 @@ class _WorkPageState extends State<WorkPage> {
                       ],
                       controller: Byarn,
                       decoration: InputDecoration(
-                          label: const Text("Number Hard Cones"),
+                          label: const Text("         Number Hard Cones", style: TextStyle(color: Colors.white),),
                           contentPadding: const EdgeInsets.all(0),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10),
@@ -286,10 +288,10 @@ class _WorkPageState extends State<WorkPage> {
                       ],
                       controller: Shine,
                       decoration: InputDecoration(
-                          label: const Text("Number of Shine"),
+                          label: const Text("         Number of Shine", style: TextStyle(color: Colors.white),),
                           contentPadding: const EdgeInsets.all(0),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(2),
                               borderSide: const BorderSide(width: 1)),
                           suffix: IconButton(
                             onPressed: () {
@@ -312,7 +314,7 @@ class _WorkPageState extends State<WorkPage> {
                       ],
                       controller: Charges,
                       decoration: InputDecoration(
-                          label: const Text("Additional Charges"),
+                          label: const Text("          Additional Charges", style: TextStyle(color: Colors.white),),
                           contentPadding: const EdgeInsets.all(1),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -335,8 +337,10 @@ class _WorkPageState extends State<WorkPage> {
                     const Text(
                       "AMOUNT PAYED",
                       style: TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                          fontSize: 25,letterSpacing: 2, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 245, 235, 235)),
                     ),
+
+                    SizedBox(height: 25,),
                     //TEXTFIELD FOR AMOUNT RECIEVED
                     TextField(
                       keyboardType: TextInputType.number,
@@ -345,12 +349,12 @@ class _WorkPageState extends State<WorkPage> {
                       ],
                       controller: Amount,
                       decoration: InputDecoration(
-                          label: const Text("Payed"),
-                          contentPadding: const EdgeInsets.all(4),
+                          label: const Text("                                          Payed", style: TextStyle(color: Colors.white),),
+                          contentPadding: const EdgeInsets.all(0),
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(60),
+                            borderRadius: BorderRadius.circular(80),
                           ),
-                          prefix: const Text("G H ¢ "),
+                          prefix: const Text(" G H ¢ "),
                           suffix: IconButton(
                             onPressed: () {
                               setState(() {
@@ -418,12 +422,12 @@ class _WorkPageState extends State<WorkPage> {
                             Charges.clear();
                           });
                         },
-                        child: const Icon(Icons.change_circle)),
+                        child: const Icon(Icons.reset_tv,)),
                   ],
                 ),
         
                 const SizedBox(
-                  height: 140,
+                  height: 90,
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -434,7 +438,7 @@ class _WorkPageState extends State<WorkPage> {
                   },
                   child: const Text(
                     "Calculator",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),
                   ),
                 ),
                 const SizedBox(
