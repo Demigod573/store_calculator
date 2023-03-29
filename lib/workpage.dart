@@ -55,7 +55,7 @@ class _WorkPageState extends State<WorkPage> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 74, 74, 74),
       appBar: AppBar( 
-        title: const Text("Jane's Kentey Calculator", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,letterSpacing: 5)),
+        title: const Text("Jane's Yarn Calculator", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,letterSpacing: 5)),
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 81, 83, 83),
         
@@ -72,8 +72,9 @@ class _WorkPageState extends State<WorkPage> {
           padding: EdgeInsets.zero,
           children: [
             const UserAccountsDrawerHeader(
-              accountName: Text("Janet Ahorlu"),
-              accountEmail: Text("janetahorlu12@gmail.com"),
+              accountName: Text("Janet Ahorlu", style: TextStyle(fontSize: 35, letterSpacing: 2),),
+              accountEmail: Text("janetahorlu12@gmail.com", style: TextStyle(fontSize: 20, letterSpacing: 2),),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 59, 59, 59)),
             ),
             ListTile(
               leading: IconButton(
@@ -97,8 +98,8 @@ class _WorkPageState extends State<WorkPage> {
                   onPressed: () {},
                   icon: const Icon(Icons.production_quantity_limits_outlined)),
               title: const Text(
-                'Yarns to Stock',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                'Yarns to Stock', 
+               style: TextStyle(fontSize: 16,letterSpacing: 2, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
@@ -109,7 +110,7 @@ class _WorkPageState extends State<WorkPage> {
                   onPressed: () {}, icon: const Icon(Icons.payments_sharp)),
               title: const Text(
                 ' Sales Person Salary Slip',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+               style: TextStyle(fontSize: 16,letterSpacing: 2, fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
@@ -121,7 +122,7 @@ class _WorkPageState extends State<WorkPage> {
                   icon: const Icon(Icons.card_membership_rounded)),
               title: const Text(
                 ' About the shop',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+               style: TextStyle(fontSize: 16,letterSpacing: 2, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -228,7 +229,7 @@ class _WorkPageState extends State<WorkPage> {
                 Column(
                   children: [
                     // TEXTFIELD TO TAKE SMALL YARNS
-                    TextField(
+                    TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
                       controller: Syarn,
                       decoration: InputDecoration(
@@ -249,11 +250,11 @@ class _WorkPageState extends State<WorkPage> {
                     ),
         
                     const SizedBox(
-                      height: 10,
+                      height: 14,
                     ),
         
                     // TEXTFIELD TO TAKE BIG YARNS
-                    TextField(
+                    TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly
@@ -276,12 +277,13 @@ class _WorkPageState extends State<WorkPage> {
                           )),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 13,
                     ),
         
                     /// TEXTFIELD FOR NUMBER OF SHINE
         
                     TextField(
+                      style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly
@@ -305,9 +307,9 @@ class _WorkPageState extends State<WorkPage> {
                     ),
         
                     const SizedBox(
-                      height: 5,
+                      height: 10,
                     ),
-                    TextField(
+                    TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly
@@ -319,7 +321,7 @@ class _WorkPageState extends State<WorkPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          prefix: const Text("G H ¢ "),
+                          prefix: const Text("G H ¢ ", style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
                           suffix: IconButton(
                             onPressed: () {
                               setState(() {
@@ -342,19 +344,19 @@ class _WorkPageState extends State<WorkPage> {
 
                     SizedBox(height: 25,),
                     //TEXTFIELD FOR AMOUNT RECIEVED
-                    TextField(
+                    TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                       keyboardType: TextInputType.number,
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly
                       ],
                       controller: Amount,
                       decoration: InputDecoration(
-                          label: const Text("                                          Payed", style: TextStyle(color: Colors.white),),
+                          label: const Text("                                          Payed", style: TextStyle(color: Colors.white, fontSize: 20),),
                           contentPadding: const EdgeInsets.all(0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(80),
                           ),
-                          prefix: const Text(" G H ¢ "),
+                          prefix: const Text(" G H ¢ ",style: const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.bold),),
                           suffix: IconButton(
                             onPressed: () {
                               setState(() {
@@ -393,9 +395,9 @@ class _WorkPageState extends State<WorkPage> {
                             double cs = double.parse(Charges.text);
         
                             balance = p3 -
-                                ((p1 * num1) + (p2 * num2) + (ps * num1) + (cs));
+                                ((p1 * num3) + (p2 * num2) + (ps * num1) + (cs));
                             Total =
-                                (p1 * num3) + (p2 * num2) + (ps * num3) + (cs);
+                                (p1 * num3) + (p2 * num2) + (ps * num1) + (cs);
                           });
         
                           setState(() {});
@@ -427,7 +429,7 @@ class _WorkPageState extends State<WorkPage> {
                 ),
         
                 const SizedBox(
-                  height: 90,
+                  height: 70,
                 ),
                 ElevatedButton(
                   onPressed: () {

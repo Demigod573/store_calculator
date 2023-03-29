@@ -35,110 +35,109 @@ class _SettingState extends State<Setting> {
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 42, 42, 43),
         appBar: AppBar(backgroundColor: Color.fromARGB(255, 42, 41, 41),
-          title: const Text(" Set Yarn Price  📝", style: TextStyle(fontSize: 30,color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 2),),
-          centerTitle: true,
+          title: const Text("  Yarn Price  📝", style: TextStyle(fontSize: 30,color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 2),),
+          centerTitle: true, elevation: 20,
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(50),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              //// CHANGING PRICE FOR SOFT CONE
-              ///
-              TextField(
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                controller: soft,
-                onChanged: (value) {
-                  _soft = double.parse(value);
-                },
-                decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(2),
-                    border: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(20))),
-                    label: const Text(
-                      "         Soft Cone Price ",
-                      style: TextStyle(fontSize: 20, color: Colors.white, letterSpacing: 2),
-                    ),
-                    suffix: IconButton(
-                        onPressed: () {
-                          soft.clear();
-                        },
-                        icon: const Icon(Icons.cancel_outlined))),
-              ),
-              const SizedBox(
-                height: 30,
-
-                //// CHANGING PRICE FOR HARD CONE
-              ),
-              TextField(
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                controller: hard,
-                onChanged: (value) {
-                  setState(() {
-                    _hard = double.parse(value);
-                  });
-                },
-                decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(2),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    label: const Text(
-                      "          Hard Cone Price",
-                      style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
-                    ),
-                    suffix: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            hard.clear();
-                          });
-                        },
-                        icon: const Icon(Icons.cancel_outlined))),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-
-              /// CHANGING PRICE FOR SHINE
-              TextField(
-                keyboardType: TextInputType.number,
-                inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-                controller: shine,
-                onChanged: (value) {
-                  setState(() {
-                    _shine = double.parse(value);
-                  });
-                },
-                decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.all(2),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    label: const Text(
-                      "            Shine  Price",
-                      style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
-                    ),
-                    suffix: IconButton(
-                        onPressed: () {
-                          setState(() {
-                            shine.clear();
-                          });
-                        },
-                        icon: const Icon(Icons.cancel_outlined))),
-              ),
-              const SizedBox(
-                height: 90,
-              ),
-
-              ///// THE SETTING HAPPENS WHEN THISN BUTTON IS PRESSED
-              ///
-              ElevatedButton(
-                  onPressed: () {
-                    setState(() {_saveData();
-});
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(50),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                //// CHANGING PRICE FOR SOFT CONE
+                ///
+                TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  controller: soft,
+                  onChanged: (value) {
+                    _soft = double.parse(value);
                   },
-                  child: const Text(" Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
-            ],
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.all(2),
+                      border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      label: const Text(
+                        "         Soft Cone Price ",
+                        style: TextStyle(fontSize: 20, color: Colors.white, letterSpacing: 2),
+                      ),
+                      suffix: IconButton(
+                          onPressed: () {
+                            soft.clear();
+                          },
+                          icon: const Icon(Icons.cancel_outlined))),
+                ),
+                const SizedBox(
+                  height: 30,
+        
+                  //// CHANGING PRICE FOR HARD CONE
+                ),
+                TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  controller: hard,
+                  onChanged: (value) {
+                    setState(() {
+                      _hard = double.parse(value);
+                    });
+                  },
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.all(2),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      label: const Text(
+                        "          Hard Cone Price",
+                        style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
+                      ),
+                      suffix: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              hard.clear();
+                            });
+                          },
+                          icon: const Icon(Icons.cancel_outlined))),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+        
+                /// CHANGING PRICE FOR SHINE
+                TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                  controller: shine,
+                  onChanged: (value) {
+                    setState(() {
+                      _shine = double.parse(value);
+                    });
+                  },
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.all(2),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      label: const Text(
+                        "            Shine  Price",
+                        style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
+                      ),
+                      suffix: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              shine.clear();
+                            });
+                          },
+                          icon: const Icon(Icons.cancel_outlined))),
+                ),
+                const SizedBox(
+                  height: 90,
+                ),
+        
+                ///// THE SETTING HAPPENS WHEN THISN BUTTON IS PRESSED
+                ///
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {_saveData();
+        });
+                    },
+                    child: const Text(" Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
+              ],
+            ),
           ),
         ));
   }
