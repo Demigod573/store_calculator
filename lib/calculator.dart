@@ -20,25 +20,27 @@ class _CalculatorState extends State<Calculator> {
         title: Text("Calculator" ,style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25) ,),
         centerTitle: true,
       ),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              FlutterAwesomeCalculator(
-                fractionDigits: 0,
-                showAnswerField: true,
-                buttonRadius: 8,
-                height: 530,
-                context: context,
-                clearButtonColor: Color.fromARGB(255, 139, 139, 142),
-                digitsButtonColor: Colors.white,
-                backgroundColor: Color.fromARGB(255, 60, 56, 56),
-                expressionAnswerColor: Color.fromARGB(255, 248, 244, 244),
-                onChanged: (answer, expression) {},
-              )
-            ],
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                FlutterAwesomeCalculator(
+                  fractionDigits: 0,
+                  showAnswerField: true,
+                  buttonRadius: 8,
+                  height: 530,
+                  context: context,
+                  clearButtonColor: Color.fromARGB(255, 139, 139, 142),
+                  digitsButtonColor: Colors.white,
+                  backgroundColor: Color.fromARGB(255, 60, 56, 56),
+                  expressionAnswerColor: Color.fromARGB(255, 248, 244, 244),
+                  onChanged: (answer, expression) {},
+                )
+              ],
+            ),
           ),
         ),
       ),

@@ -39,105 +39,107 @@ class _SettingState extends State<Setting> {
           title: const Text("  Yarn Price  📝", style: TextStyle(fontSize: 30,color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 2),),
           centerTitle: true, elevation: 20,
         ),
-        body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(50),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                //// CHANGING PRICE FOR SOFT CONE
-                ///
-                TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  controller: soft,
-                  onChanged: (value) {
-                    _soft = double.parse(value);
-                  },
-                  decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.all(2),
-                      border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      label: const Text(
-                        "         Soft Cone Price ",
-                        style: TextStyle(fontSize: 20, color: Colors.white, letterSpacing: 2),
-                      ),
-                      suffix: IconButton(
-                          onPressed: () {
-                            soft.clear();
-                          },
-                          icon: const Icon(Icons.cancel_outlined))),
-                ),
-                const SizedBox(
-                  height: 30,
-        
-                  //// CHANGING PRICE FOR HARD CONE
-                ),
-                TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  controller: hard,
-                  onChanged: (value) {
-                    setState(() {
-                      _hard = double.parse(value);
-                    });
-                  },
-                  decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.all(2),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      label: const Text(
-                        "          Hard Cone Price",
-                        style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
-                      ),
-                      suffix: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              hard.clear();
-                            });
-                          },
-                          icon: const Icon(Icons.cancel_outlined))),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-        
-                /// CHANGING PRICE FOR SHINE
-                TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
-                  keyboardType: TextInputType.numberWithOptions(decimal: true),
-                  controller: shine,
-                  onChanged: (value) {
-                    setState(() {
-                      _shine = double.parse(value);
-                    });
-                  },
-                  decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.all(2),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20)),
-                      label: const Text(
-                        "            Shine  Price",
-                        style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
-                      ),
-                      suffix: IconButton(
-                          onPressed: () {
-                            setState(() {
-                              shine.clear();
-                            });
-                          },
-                          icon: const Icon(Icons.cancel_outlined))),
-                ),
-                const SizedBox(
-                  height: 90,
-                ),
-        
-                ///// THE SETTING HAPPENS WHEN THISN BUTTON IS PRESSED
-                ///
-                ElevatedButton( style: ElevatedButton.styleFrom(primary: Color.fromARGB(167, 41, 68, 71)),
-                    onPressed: () {
-                      setState(() {_saveData();
-        });
+        body: SingleChildScrollView(
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(50),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  //// CHANGING PRICE FOR SOFT CONE
+                  ///
+                  TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
+                    keyboardType: TextInputType.numberWithOptions(decimal: true),
+                    controller: soft,
+                    onChanged: (value) {
+                      _soft = double.parse(value);
                     },
-                    child: const Text(" \n Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
-              ],
+                    decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(2),
+                        border: const OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(20))),
+                        label: const Text(
+                          "         Soft Cone Price ",
+                          style: TextStyle(fontSize: 20, color: Colors.white, letterSpacing: 2),
+                        ),
+                        suffix: IconButton(
+                            onPressed: () {
+                              soft.clear();
+                            },
+                            icon: const Icon(Icons.cancel_outlined))),
+                  ),
+                  const SizedBox(
+                    height: 30,
+          
+                    //// CHANGING PRICE FOR HARD CONE
+                  ),
+                  TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
+                    keyboardType: TextInputType.numberWithOptions(decimal: true),
+                    controller: hard,
+                    onChanged: (value) {
+                      setState(() {
+                        _hard = double.parse(value);
+                      });
+                    },
+                    decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(2),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        label: const Text(
+                          "          Hard Cone Price",
+                          style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
+                        ),
+                        suffix: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                hard.clear();
+                              });
+                            },
+                            icon: const Icon(Icons.cancel_outlined))),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+          
+                  /// CHANGING PRICE FOR SHINE
+                  TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
+                    keyboardType: TextInputType.numberWithOptions(decimal: true),
+                    controller: shine,
+                    onChanged: (value) {
+                      setState(() {
+                        _shine = double.parse(value);
+                      });
+                    },
+                    decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(2),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        label: const Text(
+                          "            Shine  Price",
+                          style: TextStyle(fontSize: 20,color: Colors.white, letterSpacing: 2),
+                        ),
+                        suffix: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                shine.clear();
+                              });
+                            },
+                            icon: const Icon(Icons.cancel_outlined))),
+                  ),
+                  const SizedBox(
+                    height: 90,
+                  ),
+          
+                  ///// THE SETTING HAPPENS WHEN THISN BUTTON IS PRESSED
+                  ///
+                  ElevatedButton( style: ElevatedButton.styleFrom(primary: Color.fromARGB(167, 41, 68, 71)),
+                      onPressed: () {
+                        setState(() {_saveData();
+          });
+                      },
+                      child: const Text(" \n Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
+                ],
+              ),
             ),
           ),
         ));
