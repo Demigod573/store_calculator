@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Setting extends StatefulWidget {
@@ -46,7 +47,7 @@ class _SettingState extends State<Setting> {
               children: [
                 //// CHANGING PRICE FOR SOFT CONE
                 ///
-                TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                   controller: soft,
                   onChanged: (value) {
@@ -71,7 +72,7 @@ class _SettingState extends State<Setting> {
         
                   //// CHANGING PRICE FOR HARD CONE
                 ),
-                TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                   controller: hard,
                   onChanged: (value) {
@@ -100,7 +101,7 @@ class _SettingState extends State<Setting> {
                 ),
         
                 /// CHANGING PRICE FOR SHINE
-                TextField(style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+                TextField(style: GoogleFonts.abel(fontWeight: FontWeight.bold, fontSize: 25),
                   keyboardType: TextInputType.numberWithOptions(decimal: true),
                   controller: shine,
                   onChanged: (value) {
@@ -130,12 +131,12 @@ class _SettingState extends State<Setting> {
         
                 ///// THE SETTING HAPPENS WHEN THISN BUTTON IS PRESSED
                 ///
-                ElevatedButton(
+                ElevatedButton( style: ElevatedButton.styleFrom(primary: Color.fromARGB(167, 41, 68, 71)),
                     onPressed: () {
                       setState(() {_saveData();
         });
                     },
-                    child: const Text(" Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
+                    child: const Text(" \n Set Prices \n       ✍🏿", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),))
               ],
             ),
           ),

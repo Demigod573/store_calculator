@@ -7,6 +7,7 @@ import 'calculator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'setting.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/src/material/colors.dart';
 
 class WorkPage extends StatefulWidget {
   const WorkPage({super.key});
@@ -321,7 +322,7 @@ class _WorkPageState extends State<WorkPage> {
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          prefix: const Text("G H ¢ ", style: const TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
+                          prefix: const Text("G H ¢ ", style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),),
                           suffix: IconButton(
                             onPressed: () {
                               setState(() {
@@ -338,8 +339,7 @@ class _WorkPageState extends State<WorkPage> {
                     ),
                     const Text(
                       "AMOUNT PAYED",
-                      style: TextStyle(
-                          fontSize: 25,letterSpacing: 2, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 245, 235, 235)),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25 , letterSpacing: 2, color: Colors.white)
                     ),
 
                     SizedBox(height: 25,),
@@ -351,7 +351,7 @@ class _WorkPageState extends State<WorkPage> {
                       ],
                       controller: Amount,
                       decoration: InputDecoration(
-                          label: const Text("                                          Payed", style: TextStyle(color: Colors.white, fontSize: 20),),
+                          label: const Text("                             Payed", style: TextStyle(color: Colors.white, fontSize: 20),),
                           contentPadding: const EdgeInsets.all(0),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(80),
@@ -380,7 +380,7 @@ class _WorkPageState extends State<WorkPage> {
                     //// CALCULATE BUTTON
                     ///
                     ///
-                    ElevatedButton(
+                    ElevatedButton(style: ElevatedButton.styleFrom(primary: Color.fromARGB(0, 38, 55, 60)) ,
                         onPressed: () {
                           // ignore: avoid_print
         
@@ -412,7 +412,7 @@ class _WorkPageState extends State<WorkPage> {
                     ),
         
                     ////RESET BUTTON
-                    ElevatedButton(
+                    ElevatedButton(style: ElevatedButton.styleFrom(primary: Color.fromARGB(0, 32, 54, 54)) ,
                         onPressed: () {
                           setState(() {
                             balance = 0;
@@ -431,16 +431,17 @@ class _WorkPageState extends State<WorkPage> {
                 const SizedBox(
                   height: 70,
                 ),
-                ElevatedButton(
+                ElevatedButton(style: ElevatedButton.styleFrom(primary: Color.fromARGB(0, 46, 81, 78)) ,
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const Calculator()));
                   },
+                  
                   child: const Text(
                     "Calculator",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 2),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, letterSpacing: 2),
                   ),
                 ),
                 const SizedBox(
